@@ -1,0 +1,19 @@
+[package]
+name = "stm32-blink-template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 版本以 2026-11-06 在 crates.io 核对为准：
+# embassy-stm32 0.6.0（2026-03-20 发布，最新版）
+# embassy-executor 0.10.0（2026-03-20 发布；注意 0.10 把 arch-cortex-m 改名为 platform-cortex-m）
+# embassy-time 0.5.1（2026-03-20 发布）
+embassy-executor = { version = "0.10", features = ["platform-cortex-m", "executor-thread", "defmt"] }
+embassy-stm32 = { version = "0.6", features = ["stm32f103c8", "time-driver-any", "exti", "defmt", "memory-x"] }
+embassy-time = { version = "0.5", features = ["defmt"] }
+defmt = "1"
+defmt-rtt = "1"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+
+[profile.release]
+debug = true

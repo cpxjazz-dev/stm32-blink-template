@@ -57,3 +57,4 @@ cargo run --release
 ## 修改记录
 
 - 2026-11-06：初版。Blue Pill F103C8 + ST-Link V2，Blink 500ms，版本按当日 crates.io 核对（embassy-stm32 0.6.0 / executor 0.10.0 / time 0.5.1）。
+- 2026-11-07：补依赖 `cortex-m-rt = "0.7"`。原因：`#[embassy_executor::main]` 展开后引用 `cortex_m_rt::entry`，模板里没把它列为直接依赖，`cargo check` 报 E0433 找不到 `cortex_m_rt`；已在 InstaBox 免费机（Rust 1.99.1）上验证通过。

@@ -9,6 +9,7 @@ edition = "2021"
 # embassy-executor 0.10.0（2026-03-20 发布；注意 0.10 把 arch-cortex-m 改名为 platform-cortex-m）
 # embassy-time 0.5.1（2026-03-20 发布）
 embassy-executor = { version = "0.10", features = ["platform-cortex-m", "executor-thread", "defmt"] }
+cortex-m-rt = "0.7"
 embassy-stm32 = { version = "0.6", features = ["stm32f103c8", "time-driver-any", "exti", "defmt", "memory-x"] }
 embassy-time = { version = "0.5", features = ["defmt"] }
 defmt = "1"
